@@ -1,8 +1,26 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+});
+
+const config = require('./config/website');
+
 module.exports = {
+  pathPrefix: config.pathPrefix,
   siteMetadata: {
-    title: 'Studio | Gatsby Template',
-    description:
-      'This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.'
+    title: config.title,
+    titleAlt: config.titleAlt,
+    titleTemplate: config.titleTemplate,
+    shortName: config.shortName,
+    url: config.url,
+    siteUrl: config.url + config.pathPrefix, // For gatsby-plugin-sitemap
+    siteLanguage: config.siteLanguage,
+    logo: config.logo, // Logo for JSONLD
+    description: config.description,
+    banner: config.logo,
+    author: config.author,
+    copyright: config.copyright,
+    twitter: config.twitter,
+    fbAppID: config.fbAppID
   },
   plugins: [
     'gatsby-plugin-react-helmet',
