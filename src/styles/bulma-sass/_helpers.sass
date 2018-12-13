@@ -1,0 +1,172 @@
+.full-width-image-container
+  width: 100vw
+  height: 400px
+  position: relative
+  left: 50%
+  right: 50%
+  margin: 5em -50vw
+  background-size: cover
+  background-position: bottom
+  display: flex
+  justify-content: center
+  align-items: center
+
+.margin-top-0
+  margin-top: 0 !important
+
+.has-background-blue-lighter
+   background-color: $cyan-lighter
+
+.full-width-map-container
+  height: 40vh
+  margin-top: 3rem
+
+.fullscreen-enabled .full-width-map-container
+  margin-top: 0
+  height: 100vh
+
+.is-shady
+  box-shadow: rgba(0, 0, 0, .1) 0 1px 0
+  border-radius: 4px
+  display: inline-block
+  margin: 10px
+  position: relative
+  @include animation(flyintoright, .4s, backwards)
+  @include transition(all, 2s, ease-out)
+  // background: #fff
+// #EFF3F4
+  .is-shady:hover
+    box-shadow: 0 10px 16px rgba(0, 0, 0, .13), 0 6px 6px rgba(0, 0, 0, .19)
+
+  /*-------------------------------------*/
+
+.is-fullheight
+  height: 100%
+  max-height: 100%
+  overflow: hidden
+  overflow-y: auto
+  display: flex
+  flex: 1
+  flex-direction: column
+  align-content: stretch
+
+.is-fullwidth
+  width: 100%
+
+.has-background-transparent
+    background-color: transparent
+
+.is-marginless-top
+  margin-top: 0 !important
+.is-marginless-right
+  margin-right: 0 !important
+.is-marginless-bottom
+  margin-bottom: 0 !important
+.is-marginless-left
+  margin-left: 0 !important
+.is-marginless-horizontal
+  margin-left: 0 !important
+  margin-right: 0 !important
+.is-marginless-vertical
+  margin-top: 0 !important
+  margin-bottom: 0 !important
+
+.is-paddingless-top
+  padding-top: 0 !important
+.is-paddingless-right
+  padding-right: 0 !important
+.is-paddingless-bottom
+  padding-bottom: 0 !important
+.is-paddingless-left
+  padding-left: 0 !important
+.is-paddingless-horizontal
+  padding-left: 0 !important
+  padding-right: 0 !important
+.is-paddingless-vertical
+  padding-top: 0 !important
+  padding-bottom: 0 !important
+
+.has-border-radius-top
+  border-top-left-radius: $radius
+  border-top-right-radius: $radius
+.has-border-radius-bottom
+  border-bottom-left-radius: $radius
+  border-bottom-right-radius: $radius
+
+=content-vcentered
+  display: flex
+  align-items: center
+
+=content-centered
+  display: flex
+  justify-content: center
+
+=content-left
+  display: flex
+  justify-content: flex-start
+
+=content-right
+  display: flex
+  justify-content: flex-end
+
+=content-top
+  display: flex
+  flex-direction: column
+  align-items: flex-start
+
+=content-bottom
+  display: flex
+  flex-direction: column
+  justify-content: flex-end
+
+*:not(td):not(.table)
+  &.has-content-vcentered
+    +content-vcentered
+  &.has-content-centered
+    +content-centered
+  &.has-content-left
+    +content-left
+  &.has-content-right
+    +content-right
+  &.has-content-top
+    +content-top
+  &.has-content-bottom
+    +content-bottom
+
+  &.has-content-vcentered-mobile
+    +mobile
+      +content-vcentered
+  &.has-content-centered-mobile
+    +mobile
+      +content-centered
+  &.has-content-left-mobile
+    +mobile
+      +content-left
+  &.has-content-right-mobile
+    +mobile
+      +content-right
+  &.has-content-top-mobile
+    +mobile
+      +content-top
+  &.has-content-bottom-mobile
+    +mobile
+      +content-bottom
+
+  &.has-content-vcentered-tablet
+    +tablet
+      +content-vcentered
+  &.has-content-centered-tablet
+    +tablet
+      +content-centered
+  &.has-content-left-tablet
+    +tablet
+      +content-left
+  &.has-content-right-tablet
+    +tablet
+      +content-right
+  &.has-content-top-tablet
+    +tablet
+      +content-top
+  &.has-content-bottom-tablet
+    +tablet
+      +content-bottom

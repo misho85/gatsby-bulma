@@ -1,0 +1,14 @@
+/**
+ * -------------------------------------
+ * TILES GRID CUSTOMIZATION
+ * -------------------------------------
+ */
+.tile
+	.is-parent
+		padding: .25rem
+
+	&.is-vertical
+		> .tile
+			&.is-child
+				&:not(:last-child)
+					margin-bottom: 0 !important
