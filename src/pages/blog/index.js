@@ -1,49 +1,58 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 import Layout from '../../components/Layout';
 
-export default class IndexPage extends Component {
-  render() {
-    const { data } = this.props;
-    const { edges: posts } = data.allMarkdownRemark;
-
-    return (
-      <Layout>
-        <section className="section">
-          <div className="container">
-            <div className="content">
-              <h1 className="has-text-weight-bold is-size-2">Latest Stories</h1>
-            </div>
+const IndexPage = ({ data }) => {
+  const { edges: posts } = data.allMarkdownRemark;
+  return (
+    <Layout>
+      <section className="hero is-primary">
+        <div className="hero-body">
+          <div className="container has-text-centered">
+            <h1 className="title">Latest Stories</h1>
+          </div>
+        </div>
+      </section>
+      <section className="section has-background-blue-lighter">
+        <div className="container">
+          <div className="columns is-multiline">
             {posts.map(({ node: post }) => (
               <div
-                className="content"
-                style={{ border: '1px solid #333', padding: '2em 4em' }}
+                className="column is-half-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd"
                 key={post.id}
               >
-                <p>
-                  <Link className="has-text-primary" to={post.fields.slug}>
-                    {post.frontmatter.title}
-                  </Link>
-                  <span> &bull; </span>
-                  <small>{post.frontmatter.date}</small>
-                </p>
-                <p>
-                  {post.excerpt}
-                  <br />
-                  <br />
-                  <Link className="button is-small" to={post.fields.slug}>
-                    Keep Reading →
-                  </Link>
-                </p>
+                <Link to={post.fields.slug}>
+                  <div className="card is-shady is-fullheight">
+                    <div className="card-image">
+                      <figure className="image is-16by9">
+                        <img
+                          src="https://source.unsplash.com/random"
+                          alt="Placeholder"
+                        />
+                      </figure>
+                    </div>
+                    <div className="card-content">
+                      <div className="content">
+                        <h4>{post.frontmatter.title}</h4>
+                        <p>
+                          {post.excerpt}
+                          <br />
+                          <br />
+                          <small>{post.frontmatter.date}</small>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
               </div>
             ))}
           </div>
-        </section>
-      </Layout>
-    );
-  }
-}
+        </div>
+      </section>
+    </Layout>
+  );
+};
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
@@ -53,6 +62,8 @@ IndexPage.propTypes = {
   })
 };
 
+export default IndexPage;
+
 export const pageQuery = graphql`
   query IndexQuery {
     allMarkdownRemark(
@@ -61,7 +72,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          excerpt(pruneLength: 400)
+          excerpt(pruneLength: 100)
           id
           fields {
             slug
@@ -69,7 +80,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             templateKey
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "DD MMMM, YYYY")
           }
         }
       }
