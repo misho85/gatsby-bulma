@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { navigate } from 'gatsby';
 import Layout from '../components/Layout';
 import Mapbox from '../components/Mapbox/Mapbox';
@@ -10,7 +10,7 @@ function encode(data) {
     .join('&');
 }
 
-export default class Test extends React.Component {
+export default class Test extends Component {
   state = {
     isValidated: false,
     isFull: false

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { navigate } from 'gatsby';
 import Layout from '../../components/Layout';
 
@@ -11,7 +11,7 @@ function encode(data) {
     .join('&');
 }
 
-export default class Index extends React.Component {
+export default class Index extends Component {
   constructor(props) {
     super(props);
     this.state = { isValidated: false };

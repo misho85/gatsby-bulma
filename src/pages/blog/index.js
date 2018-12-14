@@ -3,56 +3,57 @@ import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 import Layout from '../../components/Layout';
 
-const IndexPage = ({ data }) => {
-  const { edges: posts } = data.allMarkdownRemark;
-  return (
-    <Layout>
-      <section className="hero is-primary">
-        <div className="hero-body">
-          <div className="container has-text-centered">
-            <h1 className="title">Latest Stories</h1>
-          </div>
+const IndexPage = ({
+  data: {
+    allMarkdownRemark: { edges: posts }
+  }
+}) => (
+  <Layout>
+    <section className="hero is-primary">
+      <div className="hero-body">
+        <div className="container has-text-centered">
+          <h1 className="title">Latest Stories</h1>
         </div>
-      </section>
-      <section className="section has-background-blue-lighter">
-        <div className="container">
-          <div className="columns is-multiline">
-            {posts.map(({ node: post }) => (
-              <div
-                className="column is-half-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd"
-                key={post.id}
-              >
-                <Link to={post.fields.slug}>
-                  <div className="card is-shady is-fullheight">
-                    <div className="card-image">
-                      <figure className="image is-16by9">
-                        <img
-                          src="https://source.unsplash.com/random"
-                          alt="Placeholder"
-                        />
-                      </figure>
-                    </div>
-                    <div className="card-content">
-                      <div className="content">
-                        <h4>{post.frontmatter.title}</h4>
-                        <p>
-                          {post.excerpt}
-                          <br />
-                          <br />
-                          <small>{post.frontmatter.date}</small>
-                        </p>
-                      </div>
+      </div>
+    </section>
+    <section className="section has-background-blue-lighter">
+      <div className="container">
+        <div className="columns is-multiline">
+          {posts.map(({ node: post }) => (
+            <div
+              className="column is-half-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd"
+              key={post.id}
+            >
+              <Link to={post.fields.slug}>
+                <div className="card is-shady is-fullheight">
+                  <div className="card-image">
+                    <figure className="image is-16by9">
+                      <img
+                        src="https://source.unsplash.com/random"
+                        alt="Placeholder"
+                      />
+                    </figure>
+                  </div>
+                  <div className="card-content">
+                    <div className="content">
+                      <h4>{post.frontmatter.title}</h4>
+                      <p>
+                        {post.excerpt}
+                        <br />
+                        <br />
+                        <small>{post.frontmatter.date}</small>
+                      </p>
                     </div>
                   </div>
-                </Link>
-              </div>
-            ))}
-          </div>
+                </div>
+              </Link>
+            </div>
+          ))}
         </div>
-      </section>
-    </Layout>
-  );
-};
+      </div>
+    </section>
+  </Layout>
+);
 
 IndexPage.propTypes = {
   data: PropTypes.shape({
