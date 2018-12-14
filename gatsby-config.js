@@ -85,6 +85,17 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-gtag`,
+      options: {
+        // your google analytics tracking id
+        trackingId: config.gTagID,
+        // Puts tracking script in the head instead of the body
+        head: false,
+        // enable ip anonymization
+        anonymize: true
+      }
+    },
+    {
       // must be after other CSS plugins
       resolve: 'gatsby-plugin-purgecss',
       options: {
