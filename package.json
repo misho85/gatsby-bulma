@@ -21,13 +21,16 @@
     "gatsby-transformer-sharp": "^2.1.9",
     "lodash": "^4.17.11",
     "lodash-webpack-plugin": "^0.11.5",
+    "mapbox-gl": "^0.52.0-beta.2",
     "netlify-cms": "^2.3.1",
     "node-sass": "^4.11.0",
     "parcel-bundler": "^1.10.3",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
+    "react-full-screen": "^0.2.3",
     "react-helmet": "^5.2.0",
+    "react-map-gl": "^4.0.5",
     "uuid": "^3.3.2"
   },
   "keywords": [
