@@ -83,7 +83,13 @@ module.exports = {
         modulePath: `${__dirname}/src/cms/cms.js`
       }
     },
-    'gatsby-plugin-purgecss', // must be after other CSS plugins
+    {
+      // must be after other CSS plugins
+      resolve: 'gatsby-plugin-purgecss',
+      options: {
+        whitelist: ['fullscreen-enabled']
+      }
+    },
     'gatsby-plugin-netlify' // make sure to keep it last in the array
   ]
 };
