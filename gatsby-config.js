@@ -12,7 +12,7 @@ module.exports = {
     titleTemplate: config.titleTemplate,
     shortName: config.shortName,
     url: config.url,
-    siteUrl: config.url + config.pathPrefix, // For gatsby-plugin-sitemap
+    siteUrl: config.url, // For gatsby-plugin-sitemap
     siteLanguage: config.siteLanguage,
     logo: config.logo, // Logo for JSONLD
     description: config.description,
@@ -47,6 +47,7 @@ module.exports = {
         name: 'images'
       }
     },
+    'gatsby-plugin-sitemap',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {

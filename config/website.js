@@ -3,7 +3,7 @@ module.exports = {
   title: 'Studio | Gatsby + Netlify CMS', // Site title.
   titleAlt: 'Studio', // Alternative site title for SEO.
   titleTemplate: '%s | Studio', // Useful when you want titles to inherit from a template
-  url: 'https://serene-lumiere-4c1fa9.netlify.com', // Domain of your website without pathPrefix.
+  url: 'https://angry-goodall-bce186.netlify.com', // Domain of your website without pathPrefix.
   logo: '/logos/logo-512x512.png', // Logo used for SEO and manifest.
   siteLanguage: 'en', // Language Tag on <html> element
   description: 'Test Gatsby for Business.', // Website description
