@@ -4,7 +4,7 @@ import Pin from './Pin';
 import NavControl from './NavControl';
 import { mapLatitude, mapLongitude } from '../../../config/website';
 
-import 'mapbox-gl/dist/mapbox-gl.css';
+// import 'mapbox-gl/dist/mapbox-gl.css';
 
 const MAPBOX_TOKEN =
   'pk.eyJ1IjoibHVjYXN3b2oiLCJhIjoiY2l5Nmg4cWU1MDA0ejMzcDJtNHJmZzJkcyJ9.WhcEdTYQH6sSw2pm0RSP9Q';
