@@ -7,9 +7,10 @@ class Navbar extends Component {
     isActive: false
   };
 
-  toggleDropdown = () => {
+  toggleDropdown = () =>
     this.setState(prevState => ({ isActive: !prevState.isActive }));
-  };
+
+  closeNav = () => this.setState({ isActive: false });
 
   render() {
     return (
@@ -20,7 +21,12 @@ class Navbar extends Component {
       >
         <div className="container">
           <div className="navbar-brand">
-            <Link to="/" className="navbar-item" title="Logo">
+            <Link
+              to="/"
+              className="navbar-item"
+              title="Logo"
+              onClick={this.closeNav}
+            >
               <img src={logo} alt="Logo" style={{ width: '88px' }} />
             </Link>
             <button
@@ -38,6 +44,7 @@ class Navbar extends Component {
           <div
             className={`navbar-menu ${this.state.isActive ? 'is-active' : ''}`}
             id="navMenu"
+            onClick={this.closeNav}
           >
             <div className="navbar-end">
               <Link className="navbar-item" to="/about">
