@@ -4,7 +4,7 @@ module.exports = {
   titleAlt: 'Studio', // Alternative site title for SEO.
   titleTemplate: '%s | Studio', // Useful when you want titles to inherit from a template
   url: 'https://angry-goodall-bce186.netlify.com', // Domain of your website without pathPrefix.
-  logo: '/logos/logo-512x512.png', // Logo used for SEO and manifest.
+  logo: 'src/img/icon.png', // Logo used for SEO and manifest.
   siteLanguage: 'en', // Language Tag on <html> element
   description: 'Test Gatsby for Business.', // Website description
   gTagID: 'UA-130093402-1', // googleAnalyticsID gtag tracking ID.

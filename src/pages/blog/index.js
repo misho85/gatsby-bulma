@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
-import Layout from '../../components/Layout';
 
 const IndexPage = ({
   data: {
     allMarkdownRemark: { edges: posts }
   }
 }) => (
-  <Layout>
+  <>
     <section className="hero is-primary">
       <div className="hero-body">
         <div className="container has-text-centered">
@@ -52,7 +51,7 @@ const IndexPage = ({
         </div>
       </div>
     </section>
-  </Layout>
+  </>
 );
 
 IndexPage.propTypes = {

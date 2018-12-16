@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { navigate } from 'gatsby';
-import Layout from '../components/Layout';
 import Mapbox from '../components/Mapbox/Mapbox';
 import Fullscreen from 'react-full-screen';
 
@@ -41,7 +40,7 @@ export default class Test extends Component {
 
   render() {
     return (
-      <Layout>
+      <>
         <Fullscreen
           enabled={this.state.isFull}
           onChange={isFull => this.setState({ isFull })}
@@ -129,7 +128,7 @@ export default class Test extends Component {
             </div>
           </div>
         </section>
-      </Layout>
+      </>
     );
   }
 }

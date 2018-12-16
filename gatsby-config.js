@@ -10,7 +10,6 @@ module.exports = {
     title: config.title,
     titleAlt: config.titleAlt,
     titleTemplate: config.titleTemplate,
-    shortName: config.shortName,
     url: config.url,
     siteUrl: config.url, // For gatsby-plugin-sitemap
     siteLanguage: config.siteLanguage,
@@ -47,6 +46,20 @@ module.exports = {
         name: 'images'
       }
     },
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: config.title,
+        short_name: config.shortName,
+        start_url: config.pathPrefix,
+        background_color: config.backgroundColor,
+        theme_color: config.themeColor,
+        display: 'standalone',
+        icon: config.logo
+      }
+    },
+    'gatsby-plugin-offline',
+    'gatsby-plugin-layout',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
@@ -85,7 +98,7 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-gtag`,
+      resolve: 'gatsby-plugin-gtag',
       options: {
         // your google analytics tracking id
         trackingId: config.gTagID,
