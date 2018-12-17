@@ -1,4 +1,10 @@
-# Gatsby + Netlify CMS Starter
+# Gatsby + Netlify CMS Starter + Bulma + PWA
+
+Primer statickog sajta sa service worker-om, za PWA. **[Demo Link](https://gbno.netlify.com)**
+
+##
+##
+##
 
 **Note:** This starter uses the [Gatsby v2 Beta](https://www.gatsbyjs.org/blog/2018-06-16-announcing-gatsby-v2-beta-launch/).
 
