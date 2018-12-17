@@ -35,6 +35,7 @@ class Navbar extends Component {
                 this.state.isActive ? 'is-active' : ''
               }`}
               data-target="navMenu"
+              aria-label="navbar menu"
             >
               <span />
               <span />
