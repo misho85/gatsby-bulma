@@ -59,7 +59,6 @@ module.exports = {
       }
     },
     'gatsby-plugin-offline',
-    'gatsby-plugin-layout',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',

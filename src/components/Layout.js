@@ -2,11 +2,11 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import Navbar from './Navbar';
+import Footer from './Footer';
 import '../styles/app.sass';
 
-const TemplateWrapper = ({ children }) => (
+const TemplateWrapper = ({ element }) => (
   <StaticQuery
     query={graphql`
       query HeadingQuery {
@@ -34,7 +34,7 @@ const TemplateWrapper = ({ children }) => (
           <meta property="og:image" content="/img/og-image.jpg" />
         </Helmet>
         <Navbar />
-        <div className="is-placeholder">{children}</div>
+        <div className="is-placeholder">{element}</div>
         <Footer />
       </div>
     )}
