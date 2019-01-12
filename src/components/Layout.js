@@ -6,7 +6,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import '../styles/app.sass';
 
-const TemplateWrapper = ({ element }) => (
+const TemplateWrapper = ({ children }) => (
   <StaticQuery
     query={graphql`
       query HeadingQuery {
@@ -34,7 +34,7 @@ const TemplateWrapper = ({ element }) => (
           <meta property="og:image" content="/img/og-image.jpg" />
         </Helmet>
         <Navbar />
-        <div className="is-placeholder">{element}</div>
+        <div className="is-placeholder">{children}</div>
         <Footer />
       </div>
     )}
