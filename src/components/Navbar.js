@@ -1,76 +1,79 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import logo from '../img/logo.svg';
 
-class Navbar extends Component {
-  state = {
-    isActive: false
+const routes = [
+  {
+    to: '/about',
+    content: 'About'
+  },
+  {
+    to: '/products',
+    content: 'Products'
+  },
+  {
+    to: '/blog',
+    content: 'Blog'
+  },
+  {
+    to: '/tester',
+    content: 'TestPage'
+  }
+];
+
+export default () => {
+  const [navbarState, setNavbarState] = useState(false);
+
+  const toggleState = (newState = !navbarState) => {
+    setNavbarState(newState);
   };
 
-  toggleDropdown = () =>
-    this.setState(prevState => ({ isActive: !prevState.isActive }));
-
-  closeNav = () => this.setState({ isActive: false });
-
-  render() {
-    return (
-      <nav
-        className="navbar is-fixed-top"
-        role="navigation"
-        aria-label="main-navigation"
-      >
-        <div className="container">
-          <div className="navbar-brand">
-            <Link
-              to="/"
-              className="navbar-item"
-              title="Logo"
-              onClick={this.closeNav}
-            >
-              <img src={logo} alt="Logo" style={{ width: '88px' }} />
-            </Link>
-            <button
-              onClick={this.toggleDropdown}
-              className={`button is-white navbar-burger ${
-                this.state.isActive ? 'is-active' : ''
-              }`}
-              data-target="navMenu"
-              aria-label="navbar menu"
-            >
-              <span />
-              <span />
-              <span />
-            </button>
-          </div>
-          <div
-            className={`navbar-menu ${this.state.isActive ? 'is-active' : ''}`}
-            id="navMenu"
-            onClick={this.closeNav}
+  return (
+    <nav
+      className="navbar is-fixed-top"
+      role="navigation"
+      aria-label="main-navigation"
+    >
+      <div className="container">
+        <div className="navbar-brand">
+          <Link
+            to="/"
+            className="navbar-item"
+            title="Logo"
+            onClick={() => setNavbarState(false)}
           >
-            <div className="navbar-end">
-              <Link className="navbar-item" to="/about">
-                About
+            <img src={logo} alt="Logo" style={{ width: '88px' }} />
+          </Link>
+          {/* eslint-disable */}
+          <a
+            onClick={() => toggleState()}
+            className={`navbar-burger burger ${navbarState ? 'is-active' : ''}`}
+          >
+            <span aria-hidden="true" />
+            <span aria-hidden="true" />
+            <span aria-hidden="true" />
+          </a>
+        </div>
+        <div className={`navbar-menu ${navbarState ? 'is-active' : ''}`}>
+          <div className="navbar-end" onClick={() => setNavbarState(false)}>
+            {routes.map(({ content, to }) => (
+              <Link
+                key={content}
+                to={to}
+                className="navbar-item"
+                activeClassName="is-active"
+              >
+                {content}
               </Link>
-              <Link className="navbar-item" to="/products">
-                Products
+            ))}
+            <div className="navbar-item">
+              <Link className="button is-primary is-outlined" to="/contact">
+                Contact
               </Link>
-              <Link className="navbar-item" to="/blog">
-                Blog
-              </Link>
-              <Link className="navbar-item" to="/tester">
-                TestPage
-              </Link>
-              <div className="navbar-item">
-                <Link className="button is-primary is-outlined" to="/contact">
-                  Contact
-                </Link>
-              </div>
             </div>
           </div>
         </div>
-      </nav>
-    );
-  }
-}
-
-export default Navbar;
+      </div>
+    </nav>
+  );
+};
