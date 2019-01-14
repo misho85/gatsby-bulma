@@ -10,8 +10,7 @@ module.exports = {
     title: config.title,
     titleAlt: config.titleAlt,
     titleTemplate: config.titleTemplate,
-    url: config.url,
-    siteUrl: config.url, // For gatsby-plugin-sitemap
+    siteUrl: config.siteUrl, // For gatsby-plugin-sitemap
     siteLanguage: config.siteLanguage,
     logo: config.logo, // Logo for JSONLD
     description: config.description,

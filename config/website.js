@@ -1,9 +1,9 @@
 module.exports = {
   pathPrefix: '/', // Prefixes all links. For cases when deployed to example.github.io/gatsby-example/.
-  title: 'Studio | Gatsby + Netlify CMS', // Site title.
-  titleAlt: 'Studio', // Alternative site title for SEO.
+  title: 'Studio', // Site title.
+  titleAlt: 'Studio | Gatsby + Netlify CMS', // Alternative site title for SEO.
   titleTemplate: '%s | Studio', // Useful when you want titles to inherit from a template
-  url: 'https://gbno.netlify.com/', // Domain of your website without pathPrefix.
+  siteUrl: 'https://gbno.netlify.com', // Domain of your website. No trailing slash!
   logo: 'src/img/icon.png', // Logo used for SEO and manifest.
   siteLanguage: 'en', // Language Tag on <html> element
   description: 'Test Gatsby for Business.', // Website description

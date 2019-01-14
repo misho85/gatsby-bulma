@@ -1,5 +1,5 @@
 import React from 'react';
-import { title, description, copyright } from '../../config/website';
+import { titleAlt, description, copyright } from '../../config/website';
 
 const Footer = () => (
   <>
@@ -7,7 +7,7 @@ const Footer = () => (
       <div className="container">
         <div className="columns">
           <div className="column is-one-third">
-            <p>{title}</p>
+            <p>{titleAlt}</p>
           </div>
           <div className="column is-one-third" />
           <div className="column is-one-third">
