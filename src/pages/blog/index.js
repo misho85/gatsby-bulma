@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
+import PageLayout from '../../components/Layout/PageLayout';
 
 const IndexPage = ({
   data: {
     allMarkdownRemark: { edges: posts }
   }
 }) => (
-  <>
+  <PageLayout pageTitle="Blog">
     <section className="hero is-primary">
       <div className="hero-body">
         <div className="container has-text-centered">
@@ -51,7 +52,7 @@ const IndexPage = ({
         </div>
       </div>
     </section>
-  </>
+  </PageLayout>
 );
 
 IndexPage.propTypes = {

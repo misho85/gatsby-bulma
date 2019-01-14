@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { navigate } from 'gatsby';
 import Mapbox from '../components/Mapbox/Mapbox';
 import Fullscreen from 'react-full-screen';
+import PageLayout from '../components/Layout/PageLayout';
 
 function encode(data) {
   return Object.keys(data)
@@ -40,7 +41,7 @@ export default class Test extends Component {
 
   render() {
     return (
-      <>
+      <PageLayout pageTitle="Test">
         <Fullscreen
           enabled={this.state.isFull}
           onChange={isFull => this.setState({ isFull })}
@@ -128,7 +129,7 @@ export default class Test extends Component {
             </div>
           </div>
         </section>
-      </>
+      </PageLayout>
     );
   }
 }
